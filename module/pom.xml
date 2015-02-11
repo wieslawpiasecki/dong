@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dong</artifactId>
+        <groupId>dong</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dong-module</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>dong</groupId>
+            <artifactId>generic-storage</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+        <maven.build.timestamp.format>yyyy.MM.dd:HH.mm.ss</maven.build.timestamp.format>
+        <buildTime>${maven.build.timestamp}</buildTime>
+        <buildnumber.plugin.version>1.2</buildnumber.plugin.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warName>${pom.artifactId}</warName>
+                    <archive>
+                        <manifestEntries>
+                            <Dependencies>com.h2database.h2, org.dom4j, oracle.jdbc, microsoft.jdbc</Dependencies>
+                            <Implementation-Title>${project.artifactId}</Implementation-Title>
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                            <Build-Date>${buildTime}</Build-Date>
+                            <!--<SCM-Branch>${buildScmBranch}</SCM-Branch>-->
+                            <SCM-Revision>${buildNumber}</SCM-Revision>
+                            <!--<Build-Number>${BUILD_NUMBER}</Build-Number>-->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field" default-cascade="all">
+    <class name="com.wpi.generic.storage.serialization.SerializedDocument" table="WPI_SerializedDocument" lazy="true">
+        <composite-id name="versionedDocumentId" class="com.wpi.generic.storage.VersionedDocumentId" access="field">
+            <key-property name="id" type="java.lang.String" length="18"/>
+            <key-property name="version" type="long"/>
+        </composite-id>
+        <property name="content" column="content" type="text" access="field"/>
+        <property name="documentComponentName" column="componentName" type="java.lang.String" access="field"/>
+        <!--<property value="occurredOn" column="created"-->
+                  <!--type="org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime"/>-->
+    </class>
+</hibernate-mapping>

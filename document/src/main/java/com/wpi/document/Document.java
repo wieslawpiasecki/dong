@@ -1,5 +1,7 @@
 package com.wpi.document;
 
+import com.wpi.document.base.DocumentHeader;
+
 import java.util.List;
 
 /**
@@ -7,4 +9,6 @@ import java.util.List;
  */
 public interface Document {
     List<Chapter> chapters();
+
+    DocumentHeader getHeader();
 }

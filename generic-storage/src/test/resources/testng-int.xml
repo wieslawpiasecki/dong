@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="WPI Integration Application Tests" verbose="-1">
+    <test name="Integration Test">
+        <groups>
+            <run>
+                <!--<include name="integration" />-->
+            </run>
+        </groups>
+    <packages>
+        <package name="com.wpi.generic.*"></package>
+    </packages>
+    </test>
+</suite>

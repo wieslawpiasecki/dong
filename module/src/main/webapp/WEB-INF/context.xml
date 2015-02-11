@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- disables cookies for storing session id -->
+<!-- should be put in 2 places: META-INF (for Tomcat) and WEB-INF (for JBoss)
+-->
+<Context cookies="false"/>

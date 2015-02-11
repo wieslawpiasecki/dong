@@ -19,4 +19,9 @@ public class BaseDocument implements Document {
     public List<Chapter> chapters() {
         return null;
     }
+
+    @Override
+    public DocumentHeader getHeader() {
+        return null;
+    }
 }

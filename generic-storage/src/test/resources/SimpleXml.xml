@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simpleDocument id="1221" version="0">
+    <name>dsd</name>
+    <address>adda</address>
+    <phone-number>
+        <type>HOME</type>
+        <number>78437548754</number>
+    </phone-number>
+    <phone-number>
+        <type>WORK</type>
+        <number>9999548754</number>
+    </phone-number>
+</simpleDocument>
